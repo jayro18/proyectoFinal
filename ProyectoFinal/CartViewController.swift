@@ -1,18 +1,17 @@
 //
-//  LoginViewController.swift
+//  CartViewController.swift
 //  ProyectoFinal
 //
-//  Created by Jayro Adilson Alhuay Galindo on 28/11/22.
+//  Created by Jayro Adilson Alhuay Galindo on 29/11/22.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class CartViewController: UIViewController {
 
-    @IBOutlet weak var ButtonLogin: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+
         // Do any additional setup after loading the view.
     }
     

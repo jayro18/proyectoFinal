@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hvF-gF-9T7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kmN-J0-uPP">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-2"/>
+            <point key="canvasLocation" x="1954.9618320610687" y="-50"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="OUM-9H-nV8">
+            <objects>
+                <viewController id="kmp-sa-BVR" customClass="HomeViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s1X-fw-4Mh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoPetishop" translatesAutoresizingMaskIntoConstraints="NO" id="om5-0v-rQ8">
+                                <rect key="frame" x="16" y="59" width="149" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JnF-YX-cG1">
+                                <rect key="frame" x="16" y="147" width="361" height="599"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="GRr-kF-G33"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EYX-ba-PY4">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lxL-08-6RW">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EMe-P9-vqG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="is1-9q-zJG"/>
+                    <navigationItem key="navigationItem" style="editor" id="hZz-rt-raG"/>
+                    <connections>
+                        <outlet property="collectionView" destination="JnF-YX-cG1" id="ZCr-ku-ghT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoD-JR-lLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-80.152671755725194" y="-436.61971830985919"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="d0k-MA-SsI">
@@ -32,15 +75,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bienvenidos a la App de PetiShop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-HM-Mt4">
-                                <rect key="frame" x="26" y="380" width="341" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eX-Pm-jxT">
-                                <rect key="frame" x="115" y="478" width="163" height="41"/>
+                                <rect key="frame" x="115" y="472" width="163" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Ingresar " cornerStyle="large">
@@ -49,23 +85,95 @@
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PETiSHOP_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Ji-EUr">
-                                <rect key="frame" x="49" y="142" width="294" height="194"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoPetishop" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Ji-EUr">
+                                <rect key="frame" x="69" y="155" width="254" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bienvenidos a la App de PetiShop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-HM-Mt4">
+                                <rect key="frame" x="26" y="371" width="341" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M3m-vf-wA5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KSo-5Z-0vP"/>
+                    <connections>
+                        <outlet property="ButtonLogin" destination="4eX-Pm-jxT" id="Z04-An-Rbz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM1-3E-LG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1077.0992366412213" y="-62.676056338028175"/>
+            <point key="canvasLocation" x="-1910.6870229007632" y="-94.366197183098592"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hOq-8x-hh0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fgs-0a-WrD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ic-lI-czL">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hvF-gF-9T7" kind="relationship" relationship="rootViewController" id="ONe-p4-MN7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ypg-F6-hYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2837.4045801526718" y="-94.366197183098592"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="P5R-8W-Fvd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kmN-J0-uPP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" style="editor" id="C4l-yA-qEV"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s5g-8P-pnE">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kmp-sa-BVR" kind="relationship" relationship="viewControllers" id="Dfx-Vm-kZi"/>
+                        <segue destination="LaW-Lg-Zhl" kind="relationship" relationship="viewControllers" id="vwc-FR-2Yw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCs-RW-WB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-854.19847328244271" y="-94.366197183098592"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="evg-Y8-TLD">
+            <objects>
+                <viewController id="LaW-Lg-Zhl" customClass="CartViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ve-6c-OXW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoPetishop" translatesAutoresizingMaskIntoConstraints="NO" id="gtK-Y3-PEk">
+                                <rect key="frame" x="16" y="59" width="149" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JNU-tz-Yxr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="xmv-1Z-Odf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIg-3K-dsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92.36641221374046" y="269.71830985915494"/>
         </scene>
     </scenes>
     <resources>
-        <image name="PETiSHOP_LOGO" width="500" height="500"/>
         <image name="arrowshape.forward" catalog="system" width="128" height="104"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="logoPetishop" width="300" height="77"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
