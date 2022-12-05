@@ -29,7 +29,7 @@
                                 <rect key="frame" x="20" y="193" width="353" height="32"/>
                                 <segments>
                                     <segment title="Comida"/>
-                                    <segment title="Ropa"/>
+                                    <segment title="Accesorios"/>
                                     <segment title="Juguetes"/>
                                 </segments>
                             </segmentedControl>
@@ -233,6 +233,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="mZd-s9-hn3" id="96S-PP-OhN"/>
                         <outlet property="imgImageView" destination="fbW-pG-7Z2" id="Fgr-oe-3zL"/>
+                        <outlet property="precioLabel" destination="5GX-Oq-mdi" id="to1-Kw-0Ru"/>
                         <outlet property="titleLabel" destination="0eU-gy-hdm" id="RJu-2G-ePk"/>
                     </connections>
                 </viewController>

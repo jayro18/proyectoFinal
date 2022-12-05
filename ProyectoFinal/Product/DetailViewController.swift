@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
 
     var detailProducts : Products?
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var precioLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imgImageView: UIImageView!
     override func viewDidLoad() {
@@ -18,6 +19,8 @@ class DetailViewController: UIViewController {
 
         titleLabel.text = detailProducts?.title
         descriptionLabel.text = detailProducts?.descripcion
+        precioLabel.text = detailProducts?.price
+        
     }
     
 
