@@ -71,11 +71,14 @@ extension PrincipalViewController: UICollectionViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "detalle"{
-            let id = sender as! NSIndexPath
-            let fila = products[id.row]
-            let destino = segue.destination as! DetailViewController
+         //   guard let name = nameTF, !name.isEmpty else { return  }
             
-            destino.detailProducts = fila
+            guard let id = sender as? NSIndexPath else {return}
+//            let id = sender as? NSIndexPath
+            let fila = products[id.row]
+            let destino = segue.destination as? DetailViewController
+            
+            destino?.detailProducts = fila
             
         }
     }

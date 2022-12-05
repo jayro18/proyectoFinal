@@ -8,8 +8,8 @@
 import UIKit
 
 struct Products{
-    let title: String?
-    let price: String?
+    let title: String
+    let price: String
     let descripcion: String
     let image: UIImage?
     
