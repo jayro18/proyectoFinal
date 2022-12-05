@@ -103,7 +103,6 @@
                                             <outlet property="priceLabel" destination="JUO-NV-5nr" id="mhG-pJ-0tk"/>
                                             <outlet property="tiendaImageView" destination="7ft-Nm-kEd" id="DBC-n6-t54"/>
                                             <outlet property="titleLabel" destination="Ja4-ab-B2b" id="ag9-uk-TR5"/>
-                                            <segue destination="Yfd-Pi-1an" kind="show" identifier="detalle" id="rG4-I0-CYG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,6 +126,7 @@
                     <navigationItem key="navigationItem" id="Y4q-xc-YVW"/>
                     <connections>
                         <outlet property="collectionView" destination="Rh5-LP-buQ" id="A3B-Ae-GRo"/>
+                        <segue destination="Yfd-Pi-1an" kind="show" identifier="detalle" id="lOJ-4v-fQ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZl-uQ-mAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,10 +140,49 @@
                     <view key="view" contentMode="scaleToFill" id="f4z-Ew-UdG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_1" translatesAutoresizingMaskIntoConstraints="NO" id="fbW-pG-7Z2">
+                                <rect key="frame" x="0.0" y="103" width="393" height="427"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="427" id="XI7-gp-TvN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-gy-hdm">
+                                <rect key="frame" x="16" y="554" width="361" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="ZHD-xE-2R2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label adsadas asdasd  asdasdasdas asdads asdasda dasdasd adsasd adsa dasdasd asdas dasdasd adas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZd-s9-hn3">
+                                <rect key="frame" x="16" y="600" width="361" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kHl-7h-US5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0eU-gy-hdm" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" constant="16" id="0W5-Qq-rah"/>
+                            <constraint firstItem="kHl-7h-US5" firstAttribute="trailing" secondItem="mZd-s9-hn3" secondAttribute="trailing" constant="16" id="2KL-Qv-dOh"/>
+                            <constraint firstItem="kHl-7h-US5" firstAttribute="trailing" secondItem="0eU-gy-hdm" secondAttribute="trailing" constant="16" id="5NO-lP-Vun"/>
+                            <constraint firstItem="0eU-gy-hdm" firstAttribute="top" secondItem="fbW-pG-7Z2" secondAttribute="bottom" constant="24" id="7Zc-ET-DI4"/>
+                            <constraint firstItem="mZd-s9-hn3" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" constant="16" id="SvM-76-Kgz"/>
+                            <constraint firstItem="kHl-7h-US5" firstAttribute="trailing" secondItem="fbW-pG-7Z2" secondAttribute="trailing" id="UTy-Xv-N3C"/>
+                            <constraint firstItem="mZd-s9-hn3" firstAttribute="top" secondItem="0eU-gy-hdm" secondAttribute="bottom" constant="5" id="Uoh-GA-6fN"/>
+                            <constraint firstItem="fbW-pG-7Z2" firstAttribute="top" secondItem="kHl-7h-US5" secondAttribute="top" id="bun-9e-Dk3"/>
+                            <constraint firstItem="fbW-pG-7Z2" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" id="k1q-ku-v2h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lh1-y9-SYo"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="mZd-s9-hn3" id="96S-PP-OhN"/>
+                        <outlet property="imgImageView" destination="fbW-pG-7Z2" id="Fgr-oe-3zL"/>
+                        <outlet property="titleLabel" destination="0eU-gy-hdm" id="RJu-2G-ePk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yt-H1-ip2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,6 +272,7 @@
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="img_1" width="514" height="514"/>
         <image name="logoPetishop" width="300" height="77"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

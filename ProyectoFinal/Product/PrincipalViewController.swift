@@ -62,23 +62,28 @@ extension PrincipalViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-        performSegue(withIdentifier: "detalle", sender: self)
+        //En un didSelectItemAt de un collection se le pasa el indexPath al sender
+        //En el tableView es el self
+        performSegue(withIdentifier: "detalle", sender: indexPath)
     }
     
-}
-
-
-extension PrincipalViewController{
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let nav = segue.destination as? UINavigationController
         if segue.identifier == "detalle"{
+            let id = sender as! NSIndexPath
+            let fila = products[id.row]
+            let destino = segue.destination as! DetailViewController
+            
+            destino.detailProducts = fila
             
         }
     }
     
 }
+
+
+
 
 
 extension PrincipalViewController:UICollectionViewDelegateFlowLayout{
