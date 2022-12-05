@@ -10,6 +10,12 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+   
+//    @IBOutlet weak var titleLabel: UILabel!
+//    @IBOutlet weak var precioLabel: UILabel!
+//    @IBOutlet weak var productImageView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationItem.hidesBackButton = true
@@ -28,4 +34,22 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+extension HomeViewController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+      if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "products", for: indexPath) as? ProductsCollectionViewCell{
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+    }
+    
+    
+    
 }
