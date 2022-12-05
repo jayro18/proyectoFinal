@@ -103,7 +103,7 @@
                                             <outlet property="priceLabel" destination="JUO-NV-5nr" id="mhG-pJ-0tk"/>
                                             <outlet property="tiendaImageView" destination="7ft-Nm-kEd" id="DBC-n6-t54"/>
                                             <outlet property="titleLabel" destination="Ja4-ab-B2b" id="ag9-uk-TR5"/>
-                                            <segue destination="Yfd-Pi-1an" kind="show" id="rG4-I0-CYG"/>
+                                            <segue destination="Yfd-Pi-1an" kind="show" identifier="detalle" id="rG4-I0-CYG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="-985.49618320610682" y="1493.661971830986"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="2m8-qS-k1Q">
             <objects>
-                <viewController id="Yfd-Pi-1an" sceneMemberID="viewController">
+                <viewController id="Yfd-Pi-1an" customClass="DetailViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4z-Ew-UdG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yt-H1-ip2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="1494"/>
+            <point key="canvasLocation" x="-19.083969465648853" y="1493.661971830986"/>
         </scene>
         <!--Cart View Controller-->
         <scene sceneID="JWs-td-kKC">

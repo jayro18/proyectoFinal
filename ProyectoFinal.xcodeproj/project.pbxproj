@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D13F5D5D293E5C4E00B5CA91 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F5D5C293E5C4E00B5CA91 /* DetailViewController.swift */; };
 		D154B15C293D936D003D5DCF /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D154B15B293D936C003D5DCF /* Products.storyboard */; };
 		D172369F292E940500A6558A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D172369E292E940500A6558A /* AppDelegate.swift */; };
 		D17236A1292E940500A6558A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17236A0292E940500A6558A /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D13F5D5C293E5C4E00B5CA91 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D154B15B293D936C003D5DCF /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		D172369B292E940500A6558A /* ProyectoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D172369E292E940500A6558A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				D1A776B5293779A100F53639 /* ProductsCollectionViewCell.swift */,
 				D1DAA7492937AC4300AF5E31 /* Products.swift */,
 				D1A776B929379E1D00F53639 /* PrincipalViewController.swift */,
+				D13F5D5C293E5C4E00B5CA91 /* DetailViewController.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				D1A776A82936622100F53639 /* CartViewController.swift in Sources */,
 				D1DAA74A2937AC4300AF5E31 /* Products.swift in Sources */,
 				D17236A1292E940500A6558A /* SceneDelegate.swift in Sources */,
+				D13F5D5D293E5C4E00B5CA91 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
