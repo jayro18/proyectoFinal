@@ -43,8 +43,8 @@ extension PrincipalViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tienda", for: indexPath) as! ProductsCollectionViewCell
 
- cell.layer.cornerRadius = 10
-        cell.contentView.layer.cornerRadius = 2.0
+            cell.layer.cornerRadius = 10
+            cell.contentView.layer.cornerRadius = 2.0
             cell.contentView.layer.borderWidth = 2.0
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
             cell.contentView.layer.masksToBounds = true
@@ -61,8 +61,25 @@ extension PrincipalViewController: UICollectionViewDataSource{
         return cell
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        performSegue(withIdentifier: "detalle", sender: self)
+    }
+    
 }
+
+
+extension PrincipalViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nav = segue.destination as? UINavigationController
+        if segue.identifier == "detalle"{
+            
+        }
+    }
+    
+}
+
 
 extension PrincipalViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
