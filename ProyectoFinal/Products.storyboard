@@ -194,12 +194,18 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
+                                        <connections>
+                                            <action selector="downButton:" destination="Yfd-Pi-1an" eventType="touchUpInside" id="ZaU-vq-9fz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6o-3l-iZx">
                                         <rect key="frame" x="116" y="10" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="upButton:" destination="Yfd-Pi-1an" eventType="touchUpInside" id="TIy-aI-tB5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -231,6 +237,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lh1-y9-SYo"/>
                     <connections>
+                        <outlet property="countLabel" destination="E7L-Mk-IuL" id="WbV-Xr-aRu"/>
                         <outlet property="descriptionLabel" destination="mZd-s9-hn3" id="96S-PP-OhN"/>
                         <outlet property="imgImageView" destination="fbW-pG-7Z2" id="Fgr-oe-3zL"/>
                         <outlet property="precioLabel" destination="5GX-Oq-mdi" id="to1-Kw-0Ru"/>
