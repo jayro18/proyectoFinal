@@ -147,7 +147,7 @@
                                     <constraint firstAttribute="height" constant="370" id="XI7-gp-TvN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-gy-hdm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-gy-hdm">
                                 <rect key="frame" x="16" y="459" width="361" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="ZHD-xE-2R2"/>
@@ -204,7 +204,7 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8R-e7-zjE">
-                                <rect key="frame" x="16" y="695" width="361" height="58"/>
+                                <rect key="frame" x="16" y="688" width="361" height="58"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="cart" catalog="system" title="Agregar al Carrito" imagePadding="12">
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
@@ -217,7 +217,7 @@
                             <constraint firstItem="0eU-gy-hdm" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" constant="16" id="0W5-Qq-rah"/>
                             <constraint firstItem="kHl-7h-US5" firstAttribute="trailing" secondItem="mZd-s9-hn3" secondAttribute="trailing" constant="16" id="2KL-Qv-dOh"/>
                             <constraint firstItem="kHl-7h-US5" firstAttribute="trailing" secondItem="0eU-gy-hdm" secondAttribute="trailing" constant="16" id="5NO-lP-Vun"/>
-                            <constraint firstItem="a8R-e7-zjE" firstAttribute="top" secondItem="5Cp-EM-Lzq" secondAttribute="bottom" constant="22" id="6n9-rq-F2F"/>
+                            <constraint firstItem="a8R-e7-zjE" firstAttribute="top" secondItem="5Cp-EM-Lzq" secondAttribute="bottom" constant="15" id="6n9-rq-F2F"/>
                             <constraint firstItem="0eU-gy-hdm" firstAttribute="top" secondItem="fbW-pG-7Z2" secondAttribute="bottom" constant="-14" id="7Zc-ET-DI4"/>
                             <constraint firstItem="5Cp-EM-Lzq" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" constant="16" id="ATk-gB-qdp"/>
                             <constraint firstItem="5Cp-EM-Lzq" firstAttribute="top" secondItem="mZd-s9-hn3" secondAttribute="bottom" constant="25" id="Cgg-7x-Vah"/>
@@ -230,9 +230,9 @@
                             <constraint firstItem="5GX-Oq-mdi" firstAttribute="top" secondItem="mZd-s9-hn3" secondAttribute="bottom" constant="25" id="euf-dN-cR0"/>
                             <constraint firstItem="kHl-7h-US5" firstAttribute="trailing" secondItem="5GX-Oq-mdi" secondAttribute="trailing" constant="16" id="fsQ-OH-276"/>
                             <constraint firstItem="fbW-pG-7Z2" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" id="k1q-ku-v2h"/>
-                            <constraint firstItem="a8R-e7-zjE" firstAttribute="top" secondItem="5GX-Oq-mdi" secondAttribute="bottom" constant="22" id="vdT-j7-at7"/>
+                            <constraint firstItem="a8R-e7-zjE" firstAttribute="top" secondItem="5GX-Oq-mdi" secondAttribute="bottom" constant="15" id="vdT-j7-at7"/>
                             <constraint firstItem="a8R-e7-zjE" firstAttribute="leading" secondItem="kHl-7h-US5" secondAttribute="leading" constant="16" id="wpl-zZ-8Wn"/>
-                            <constraint firstItem="kHl-7h-US5" firstAttribute="bottom" secondItem="a8R-e7-zjE" secondAttribute="bottom" constant="16" id="yNp-y3-WWt"/>
+                            <constraint firstItem="kHl-7h-US5" firstAttribute="bottom" secondItem="a8R-e7-zjE" secondAttribute="bottom" constant="23" id="yNp-y3-WWt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lh1-y9-SYo"/>
