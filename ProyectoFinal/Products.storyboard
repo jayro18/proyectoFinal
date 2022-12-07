@@ -59,9 +59,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja4-ab-B2b">
-                                                    <rect key="frame" x="20" y="137" width="140" height="33.333333333333343"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producto" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja4-ab-B2b">
+                                                    <rect key="frame" x="8" y="137" width="167" height="33.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -90,9 +90,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="R4h-N9-R0h" secondAttribute="trailing" constant="20" id="Z1R-NW-zDT"/>
                                                 <constraint firstItem="R4h-N9-R0h" firstAttribute="leading" secondItem="JUO-NV-5nr" secondAttribute="trailing" constant="8" symbolic="YES" id="Z38-Zu-Ow4"/>
                                                 <constraint firstItem="Ja4-ab-B2b" firstAttribute="top" secondItem="7ft-Nm-kEd" secondAttribute="bottom" constant="10" id="gu6-mc-0WV"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ja4-ab-B2b" secondAttribute="trailing" constant="20" id="m42-zS-y4E"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ja4-ab-B2b" secondAttribute="trailing" constant="5" id="m42-zS-y4E"/>
                                                 <constraint firstAttribute="trailing" secondItem="7ft-Nm-kEd" secondAttribute="trailing" constant="5" id="mFK-Xj-nTJ"/>
-                                                <constraint firstItem="Ja4-ab-B2b" firstAttribute="leading" secondItem="2c1-Jk-leO" secondAttribute="leading" constant="20" id="rsx-rJ-yFS"/>
+                                                <constraint firstItem="Ja4-ab-B2b" firstAttribute="leading" secondItem="2c1-Jk-leO" secondAttribute="leading" constant="8" id="rsx-rJ-yFS"/>
                                                 <constraint firstItem="7ft-Nm-kEd" firstAttribute="top" secondItem="2c1-Jk-leO" secondAttribute="top" id="tY8-eg-rVE"/>
                                                 <constraint firstAttribute="bottom" secondItem="JUO-NV-5nr" secondAttribute="bottom" constant="21.333333333333343" id="ucu-e9-KyM"/>
                                             </constraints>

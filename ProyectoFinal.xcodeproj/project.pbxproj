@@ -18,6 +18,7 @@
 		D1A776B6293779A100F53639 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A776B5293779A100F53639 /* ProductsCollectionViewCell.swift */; };
 		D1A776BA29379E1D00F53639 /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A776B929379E1D00F53639 /* PrincipalViewController.swift */; };
 		D1B057F12935576F00A57E27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B057F02935576F00A57E27 /* HomeViewController.swift */; };
+		D1BAA6F6293FBE6500476A44 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BAA6F5293FBE6500476A44 /* data.json */; };
 		D1DAA74A2937AC4300AF5E31 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DAA7492937AC4300AF5E31 /* Products.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		D1A776B5293779A100F53639 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1A776B929379E1D00F53639 /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
 		D1B057F02935576F00A57E27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D1BAA6F5293FBE6500476A44 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../Downloads/data.json; sourceTree = "<group>"; };
 		D1DAA7492937AC4300AF5E31 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				D17236A9292E940B00A6558A /* LaunchScreen.storyboard */,
 				D17236AC292E940B00A6558A /* Info.plist */,
 				D1B057F02935576F00A57E27 /* HomeViewController.swift */,
+				D1BAA6F5293FBE6500476A44 /* data.json */,
 			);
 			path = ProyectoFinal;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				D17236AB292E940B00A6558A /* LaunchScreen.storyboard in Resources */,
 				D17236A8292E940B00A6558A /* Assets.xcassets in Resources */,
 				D154B15C293D936D003D5DCF /* Products.storyboard in Resources */,
+				D1BAA6F6293FBE6500476A44 /* data.json in Resources */,
 				D17236A6292E940500A6558A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

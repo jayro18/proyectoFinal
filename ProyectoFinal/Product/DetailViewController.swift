@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         titleLabel.text = detailProducts?.title
-        descriptionLabel.text = detailProducts?.descripcion
+//        descriptionLabel.text = detailProducts?.descripcion
         precioLabel.text = detailProducts?.price
         
     }
