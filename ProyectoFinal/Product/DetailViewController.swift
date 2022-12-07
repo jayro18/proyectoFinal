@@ -35,9 +35,20 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = detailProducts?.title
-//        descriptionLabel.text = detailProducts?.descripcion
-        precioLabel.text = detailProducts?.price
+        guard let detalle = detailProducts else {return}
+        
+        DispatchQueue.global().async {
+            guard let url = NSURL(string: detalle.image) as? URL else {return}
+            guard let data = try? Data(contentsOf: url) else {return} //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            
+            DispatchQueue.main.async {
+                self.imgImageView.image = UIImage(data: data)
+            }
+        }
+        
+        titleLabel.text = detalle.title
+       descriptionLabel.text = detalle.description
+        precioLabel.text =  "S/ \(String(format: "%.2f", detalle.price))"
         
     }
     

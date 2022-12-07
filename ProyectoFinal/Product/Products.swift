@@ -8,9 +8,11 @@
 import UIKit
 
 struct Products : Decodable{
+    
         let title: String
-       let price: String
+       let price: Double
        let image: String
+        let description: String
 }
 
 //func recogerData(){

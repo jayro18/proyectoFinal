@@ -22,8 +22,7 @@ class PrincipalViewController: UIViewController {
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
         fetchData()
-        
-        print(productsList)
+
     }
     
 

@@ -19,14 +19,15 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         
         DispatchQueue.global().async {
             guard let url = NSURL(string: products.image) as? URL else {return}
-            let data = try? Data(contentsOf: url) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            guard let data = try? Data(contentsOf: url) else {return} //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            
             DispatchQueue.main.async {
-                self.tiendaImageView.image = UIImage(data: data!)
+                self.tiendaImageView.image = UIImage(data: data)
             }
         }
         
 
-        priceLabel.text = products.price
+        priceLabel.text = "S/ \(String(format: "%.2f", products.price))"
         titleLabel.text = products.title
     }
 }
