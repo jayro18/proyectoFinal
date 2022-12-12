@@ -14,9 +14,20 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var priceLabel: UILabel!
+    
     func setup(with products: Products){
-        tiendaImageView.image = products.image
-        priceLabel.text = products.price
+        
+        DispatchQueue.global().async {
+            guard let url = NSURL(string: products.image) as? URL else {return}
+            guard let data = try? Data(contentsOf: url) else {return} //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            
+            DispatchQueue.main.async {
+                self.tiendaImageView.image = UIImage(data: data)
+            }
+        }
+        
+
+        priceLabel.text = "S/ \(String(format: "%.2f", products.price))"
         titleLabel.text = products.title
     }
 }

@@ -8,18 +8,21 @@
 import UIKit
 
 class PrincipalViewController: UIViewController {
+    
+    var productsList:[Products] = [Products]()
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+              
         
         collectionView.dataSource = self
         collectionView.delegate=self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
-       
+        fetchData()
+
     }
     
 
@@ -37,7 +40,7 @@ class PrincipalViewController: UIViewController {
 
 extension PrincipalViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        return productsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,7 +59,7 @@ extension PrincipalViewController: UICollectionViewDataSource{
             cell.layer.shadowOpacity = 1.0
             cell.layer.masksToBounds = false
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-            cell.setup(with: products[indexPath.row])
+            cell.setup(with: productsList[indexPath.row])
         
         return cell
     }
@@ -74,12 +77,31 @@ extension PrincipalViewController: UICollectionViewDataSource{
          //   guard let name = nameTF, !name.isEmpty else { return  }
             
             guard let id = sender as? NSIndexPath else {return}
-//            let id = sender as? NSIndexPath
-            let fila = products[id.row]
+            let fila = productsList[id.row]
             let destino = segue.destination as? DetailViewController
             
             destino?.detailProducts = fila
             
+        }
+    }
+    
+    func fetchData() {
+        guard let fileLocation = Bundle.main.url(forResource: "data", withExtension: "json") else
+        {
+            print("File location")
+            return
+            
+        }
+    
+        do {
+           let data = try Data(contentsOf: fileLocation)
+            let receivedData = try JSONDecoder().decode([Products].self, from: data)
+            
+            self.productsList = receivedData
+            
+        
+        } catch  {
+            print("Error decoding in decoding \(error)")
         }
     }
     
@@ -94,3 +116,5 @@ extension PrincipalViewController:UICollectionViewDelegateFlowLayout{
         return CGSize(width: 170, height: 200)
     }
 }
+
+
