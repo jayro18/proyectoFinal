@@ -5,16 +5,16 @@
 //  Created by Jayro Adilson Alhuay Galindo on 30/11/22.
 //
 
-import UIKit
-
-struct Products : Decodable{
-        let id: Int
-        let title: String
-        let price: Double
-        let image: String
-        let description: String
-        let categoria: String
-}
+//import UIKit
+//
+//struct Products : Decodable{
+//        let id: Int
+//        let title: String
+//        let price: Double
+//        let image: String
+//        let description: String
+//        let categoria: String
+//}
 
 //func recogerData(){
 //    guard let sourcesURL =  Bundle.main.url(forResource: "data", withExtension: "json") else{

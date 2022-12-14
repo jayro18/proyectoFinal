@@ -13,7 +13,7 @@
         <!--Principal View Controller-->
         <scene sceneID="sQF-g7-Ion">
             <objects>
-                <viewController id="XlM-v5-h8h" customClass="PrincipalViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrincipalViewController" id="XlM-v5-h8h" customClass="PrincipalViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j1R-mB-CcW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
         <!--Detail View Controller-->
         <scene sceneID="2m8-qS-k1Q">
             <objects>
-                <viewController id="Yfd-Pi-1an" customClass="DetailViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Yfd-Pi-1an" customClass="DetailViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4z-Ew-UdG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="-2466" y="2245"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="pKL-mu-iQS">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dK4-V8-1i8" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dK4-V8-1i8" customClass="TabViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gvx-7g-JvY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

@@ -7,10 +7,12 @@
 
 import UIKit
 
+
 class PrincipalViewController: UIViewController {
     
+    var presenter: ProductoPresenterInputProtocol?
     
-    var productsList:[Products] = [Products]()
+    var productsList:[ProductEntity] = [ProductEntity]()
 
 
     // Agregar una variable lazy para que este filtro funcione cuando ya este lleno el productsList
@@ -32,7 +34,10 @@ class PrincipalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        print("called view")
+        presenter?.getData()
+        presenter?.presentErrorView()
+//        fetchData()
         collectionView.dataSource = self
         collectionView.delegate=self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -140,30 +145,43 @@ extension PrincipalViewController: UICollectionViewDataSource{
         }
     }
     
-    func fetchData() {
-        guard let fileLocation = Bundle.main.url(forResource: "data", withExtension: "json") else
-        {
-            print("File location")
-            return
-            
-        }
-    
-        do {
-           let data = try Data(contentsOf: fileLocation)
-            let receivedData = try JSONDecoder().decode([Products].self, from: data)
-            
-            self.productsList = receivedData
-            
-        
-        } catch  {
-            print("Error decoding in decoding \(error)")
-        }
-    }
+//    func fetchData() {
+//        guard let fileLocation = Bundle.main.url(forResource: "data", withExtension: "json") else
+//        {
+//            print("File location")
+//            return
+//
+//        }
+//
+//        do {
+//           let data = try Data(contentsOf: fileLocation)
+//            let receivedData = try JSONDecoder().decode([Products].self, from: data)
+//
+//            self.productsList = receivedData
+//
+//
+//        } catch  {
+//            print("Error decoding in decoding \(error)")
+//        }
+//    }
     
 }
 
 
+extension PrincipalViewController: ProductoViewProtocol{
 
+    func showProductos(_ products: [ProductEntity]) {
+        self.productsList = products
+        collectionView.reloadData()
+    }
+    
+    func mostrar(_ numero: Int) {
+        /// mostrar el numero recibido
+        print("called: mostrar numero en view")
+    }
+    
+    
+}
 
 
 extension PrincipalViewController:UICollectionViewDelegateFlowLayout{

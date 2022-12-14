@@ -15,7 +15,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var priceLabel: UILabel!
     
-    func setup(with products: Products){
+    func setup(with products: ProductEntity){
         
         DispatchQueue.global().async {
             guard let url = NSURL(string: products.image) as? URL else {return}
