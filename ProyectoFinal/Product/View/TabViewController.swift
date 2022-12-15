@@ -14,7 +14,9 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let  productViewController = ProductConfigurator.makeProducto()
         // Do any additional setup after loading the view.
+        viewControllers = [productViewController]
     }
     
 

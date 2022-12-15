@@ -24,6 +24,7 @@ class ProductConfigurator{
         let view = storyboard.instantiateViewController(withIdentifier: "PrincipalViewController") as! PrincipalViewController
         
         
+        
         let router = ProductoRouter(presenter: presenter)
         router.view = view
         

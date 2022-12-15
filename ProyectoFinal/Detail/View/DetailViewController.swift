@@ -8,7 +8,10 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+    var presenter: DetailPresenterProtocol?
+    
+ 
     var detailProducts : ProductEntity?
 
     @IBOutlet weak var descriptionLabel: UILabel!

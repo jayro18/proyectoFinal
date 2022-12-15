@@ -8,20 +8,23 @@
 import UIKit
 
 class ProductoRouter: ProductoRouterProtocol {
-
     
+    var detailConfigurator: DetailConfigurator?
     
-//    var detailConfigurator: DetailConfigurator?
 
     func presetProductoDetail(_ producto: ProductEntity) {
 
-//        let petDetail = PetDetail(name: pet.name)
-//
-//        detailConfigurator = DetailConfigurator()
-//
-//        /// Paso 3 (cliente)
-//        detailConfigurator?.delegate = self
-//        let detailViewController = detailConfigurator!.make(petDetail)
+        let petDetail = ProductoDetail(id: producto.id, title: producto.title, price: producto.price, image: producto.image, description: producto.description, categoria: producto.categoria)
+
+        detailConfigurator = DetailConfigurator()
+
+        /// Paso 3 (cliente)
+        detailConfigurator?.delegate = self
+        let detailViewController = detailConfigurator!.make(petDetail)
+        
+            let storyboard = UIStoryboard(name: "Products", bundle: nil)
+            let view = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            view.navigationController?.pushViewController(detailViewController, animated: true)
 //        view?.present(detailViewController, animated: true)
 
     }
@@ -30,10 +33,10 @@ class ProductoRouter: ProductoRouterProtocol {
   
         let viewController = UIViewController()
         
-        let storyboard = UIStoryboard(name: "Products", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "PrincipalViewController") as! PrincipalViewController
-        navigationController?.pushViewController(viewController, animated: true)
-//        view?.present(viewController, animated: true)
+//        let storyboard = UIStoryboard(name: "Products", bundle: nil)
+//        let view = storyboard.instantiateViewController(withIdentifier: "PrincipalViewController") as! PrincipalViewController
+//        navigationController?.pushViewController(viewController, animated: true)
+      view?.present(viewController, animated: true)
     }
     
     
@@ -58,12 +61,12 @@ class ProductoRouter: ProductoRouterProtocol {
     }
 }
 
-/// Paso 1 (cliente)
-//extension ListaRouter: DetailConfiguratorDelegate {
-//
-//    /// Paso 2 (cliente)
-//    func detailConfigurator(didDismiss viewController: UIViewController) {
-//        print("soy notificado")
-//    }
-//
-//}
+// Paso 1 (cliente)
+extension ProductoRouter: DetailConfiguratorDelegate {
+
+    /// Paso 2 (cliente)
+    func detailConfigurator(didDismiss viewController: UIViewController) {
+        print("soy notificado")
+    }
+
+}
