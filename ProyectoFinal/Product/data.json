@@ -1,0 +1,56 @@
+[
+  {
+  "id": 1,
+  "title": "Ricocan Adulto 22kg",
+  "price": 150.00,
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+  "image": "https://res.cloudinary.com/dy5pejp73/image/upload/v1670447250/proyecto-ios/ricocan-original-adultos-removebg-preview_dezyac.png",
+  "categoria": "comida",
+  "stock":50
+},
+  {
+  "id": 2,
+  "title": "Ricocan Cachorro 15kg",
+  "price": 100.00,
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+  "image": "https://res.cloudinary.com/dy5pejp73/image/upload/v1670345569/proyecto-ios/ricocan_cachorro_kwnzrq.png",
+  "categoria": "comida",
+  "stock":50
+},
+  {
+  "id": 3,
+  "title": "Ricocan Adulto 22kg",
+  "price": 180.00,
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+  "image": "https://res.cloudinary.com/dy5pejp73/image/upload/v1670447027/proyecto-ios/ricocan-raza-pequenia-removebg-preview_gjl1i0.png",
+  "categoria": "comida",
+  "stock":50
+},
+    {
+  "id": 4,
+  "title": "Ricocan Cachorro 15kg",
+  "price": 180.00,
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+  "image": "https://res.cloudinary.com/dy5pejp73/image/upload/v1670446781/proyecto-ios/ricocan_adulto_22_maserr.png",
+  "categoria": "comida",
+  "stock":50
+},
+        {
+      "id": 5,
+      "title": "Accesorio",
+      "price": 80.00,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "image": "https://res.cloudinary.com/dy5pejp73/image/upload/v1670446781/proyecto-ios/ricocan_adulto_22_maserr.png",
+      "categoria": "accesorio",
+      "stock":50
+    },
+        {
+      "id": 6,
+      "title": "Aseo",
+      "price": 80.00,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "image": "https://res.cloudinary.com/dy5pejp73/image/upload/v1670446781/proyecto-ios/ricocan_adulto_22_maserr.png",
+      "categoria": "aseo",
+      "stock":50
+    }
+]

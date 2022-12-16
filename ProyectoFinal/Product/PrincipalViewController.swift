@@ -10,7 +10,7 @@ import UIKit
 class PrincipalViewController: UIViewController {
     
     
-    var productsList:[Products] = [Products]()
+    var productsList:[Product] = [Product]()
 
 
     // Agregar una variable lazy para que este filtro funcione cuando ya este lleno el productsList
@@ -59,7 +59,8 @@ extension PrincipalViewController: UICollectionViewDataSource{
 //        return productsList.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tienda", for: indexPath) as! ProductsCollectionViewCell
 
             cell.layer.cornerRadius = 10
@@ -150,7 +151,7 @@ extension PrincipalViewController: UICollectionViewDataSource{
     
         do {
            let data = try Data(contentsOf: fileLocation)
-            let receivedData = try JSONDecoder().decode([Products].self, from: data)
+            let receivedData = try JSONDecoder().decode([Product].self, from: data)
             
             self.productsList = receivedData
             

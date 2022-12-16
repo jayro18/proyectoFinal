@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Products : Decodable{
+struct Product : Decodable{
         let id: Int
         let title: String
         let price: Double
