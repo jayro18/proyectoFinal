@@ -8,8 +8,7 @@
 import UIKit
 
 protocol ShopCartViewControllerProtocol {
-    func reloadTable()
-//    func reloadPrice()
+    func refresh()
 }
 
 
@@ -32,11 +31,11 @@ class ShopCartViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.getProducts().count ?? 0
+        return presenter?.getAllShopCart().count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return presenter?.printTable(tableView, indexPath) ?? UITableViewCell()
+        return presenter?.cellShopCart(tableView, indexPath) ?? UITableViewCell()
     }
     
 
@@ -44,7 +43,7 @@ class ShopCartViewController: UIViewController, UITableViewDataSource {
 }
 
 extension ShopCartViewController:ShopCartViewControllerProtocol{
-    func reloadTable() {
+    func refresh() {
         tableView.reloadData()
     }
     

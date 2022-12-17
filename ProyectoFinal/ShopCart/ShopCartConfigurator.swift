@@ -11,10 +11,8 @@ class ShopCartConfigurator {
         let storyboard = UIStoryboard(name: "Products", bundle: nil)
         
         let api = Db_crud()
-//
        let presenter = ShopCartPresenter()
        let interactor = ShopCartInteractor()
-//        let router = CarRouter(presenter: presenter)
         
         let view = storyboard.instantiateViewController(withIdentifier: "ShopCartViewController") as! ShopCartViewController
         

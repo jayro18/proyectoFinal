@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailInteractorProtocol {
-    func setProductDatacore(_ producto: DetailEntityProtocol, _ amount:Int)
+    func sendDataCore(_ producto: DetailEntityProtocol, _ amount:Int)
 }
 
 class DetailInteractor: DetailInteractorProtocol {
@@ -16,8 +16,8 @@ class DetailInteractor: DetailInteractorProtocol {
     var presenter: DetailPresenterProtocol?
     
     
-    func setProductDatacore(_ producto: DetailEntityProtocol, _ amount:Int) {
-        api?.updateProductCar(producto, amount)
+    func sendDataCore(_ producto: DetailEntityProtocol, _ amount:Int) {
+        api?.saveShopCart(producto, amount)
     }
 }
 

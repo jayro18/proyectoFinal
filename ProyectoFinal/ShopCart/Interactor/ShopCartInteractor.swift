@@ -7,8 +7,7 @@
 
 import Foundation
 protocol ShopCartInteractorProtocol {
-    func getProductsCar() -> [ShopCartEntityS]
-    func deleteProductCar(_ id:Int)
+    func getShopCart() -> [ShopCartEntityS]
 }
 
 class ShopCartInteractor {
@@ -17,11 +16,8 @@ class ShopCartInteractor {
 }
 
 extension ShopCartInteractor: ShopCartInteractorProtocol {
-    func deleteProductCar(_ id:Int) {
-        api?.deleteProduct(id)
-    }
 
-    func getProductsCar() -> [ShopCartEntityS] {
+    func getShopCart() -> [ShopCartEntityS] {
         
         return api?.getAllShopCart() ?? []
     }

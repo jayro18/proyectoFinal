@@ -17,15 +17,12 @@ class ProductoRouter: ProductoRouterProtocol {
         self.presenter = presenter
     }
     
-    func presentDescriptionView(_ product: ProductsResponse){
-        let productDetail = DetailEntity(id: product.id, title: product.title, price: product.price, descriptionL: product.description, image: product.image, categoria: product.categoria, stock: product.stock)
+    func viewDescription(_ product: ProductsResponse){
+        let detail = DetailEntity(id: product.id, title: product.title, price: product.price, descriptionL: product.description, image: product.image, categoria: product.categoria, stock: product.stock)
 
-        let viewDescription = DetailConfigurator.make(productDetail)
+        let VDescription = DetailConfigurator.make(detail)
         
-        view?.navigationController?.pushViewController(viewDescription, animated: true)
-        
-        
-//        view?.present(viewDescription, animated: true)
+        view?.navigationController?.pushViewController(VDescription, animated: true)
     }
     
 }

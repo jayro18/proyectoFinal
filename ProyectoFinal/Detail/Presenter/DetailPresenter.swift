@@ -28,11 +28,10 @@ extension DetailPresenter: DetailPresenterProtocol {
     
     func getDataProduct() -> DetailEntityProtocol {
         return producto!
-//        return producto ?? DetailEntity(id: 0, title: "", price: 0, descriptionL: "", image: "", categoria: "", stock: 0)
     }
     
     func addShopCart(_ amount:Int) {
-        interactor?.setProductDatacore(producto!, amount)
+        interactor?.sendDataCore(producto!, amount)
         router?.presentShopCartView()
     }
 }

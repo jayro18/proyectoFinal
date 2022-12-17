@@ -13,9 +13,10 @@ protocol DetailRouterProtocol {
 }
 
 class DetailRouter: DetailRouterProtocol {
-  
-    var presenter : DetailPresenterProtocol?
+    
     var view: UIViewController?
+    
+    var presenter : DetailPresenterProtocol?
     
     required init(presenter: DetailPresenterProtocol) {
         self.presenter = presenter
@@ -24,8 +25,6 @@ class DetailRouter: DetailRouterProtocol {
     func presentShopCartView() {
         let viewCar = ShopCartConfigurator.make()
         view?.navigationController?.pushViewController(viewCar, animated: true)
-//        viewCar.modalPresentationStyle = .fullScreen
-//        view?.present(viewCar, animated: true)
     }
     
     

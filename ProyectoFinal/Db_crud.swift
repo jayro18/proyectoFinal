@@ -12,9 +12,8 @@ import UIKit
 
 protocol Db_crudProtocol {
       func getAllShopCart() -> [ShopCartEntityS]
-      func updateProductCar(_ producto: DetailEntityProtocol, _ amount:Int)
-      func saveProductCar(producto: DetailEntityProtocol,amount:Int)
-//    func deleteProduct(_ id:Int)
+      func saveShopCart(_ producto: DetailEntityProtocol, _ amount:Int)
+      func setShopCart(producto: DetailEntityProtocol,amount:Int)
 }
 
 class Db_crud: Db_crudProtocol {
@@ -22,25 +21,8 @@ class Db_crud: Db_crudProtocol {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ShopCartEntity")
-//        let request = NSFetchRequest<ShopCartEntity> = ShopCartEntity.fetchRequest()
 
-    func deleteProduct(_ id: Int) {
-        let context = appDelegate.persistentContainer.viewContext
-        request.returnsObjectsAsFaults = false
-        let predicate = NSPredicate(format: "(id = %@)", String(id) )
-        request.predicate = predicate
-        do {
-            let result = try context.fetch(request);
-            let data = result[0] as! NSManagedObject
-            context.delete(data)
-            print(data)
-        } catch {
-            print("Failed")
-        }
-    }
-
-
-    func updateProductCar(_ producto: DetailEntityProtocol, _ amount:Int) {
+    func saveShopCart(_ producto: DetailEntityProtocol, _ amount:Int) {
         let context = appDelegate.persistentContainer.viewContext
         let predicate = NSPredicate(format: "(id = %@)", String(producto.id) )
         request.returnsObjectsAsFaults = false
@@ -55,34 +37,31 @@ class Db_crud: Db_crudProtocol {
                 objectUpdate.setValue(Double(countTotal) * Double(producto.price), forKey: "price")
                 do {
                     try context.save()
-                    print("update")
-                } catch let error as NSError {
-                    print(error)
+                } catch {
+                    print("Error al actualizar")
                 }
             }else {
-                saveProductCar(producto: producto, amount: amount)
+                setShopCart(producto: producto, amount: amount)
             }
-        } catch let error as NSError {
-            print(error)
+        } catch {
+            print("Error")
         }
     }
     
-    func saveProductCar(producto: DetailEntityProtocol,amount:Int) {
+    func setShopCart(producto: DetailEntityProtocol,amount:Int) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "ShopCartEntity", in: context)
-        let newProductCar = NSManagedObject(entity: entity!, insertInto: context)
-        newProductCar.setValue(producto.id, forKey: "id")
-        newProductCar.setValue(amount, forKey: "amount")
-        newProductCar.setValue(Double(producto.price) * Double(amount), forKey: "price")
-        newProductCar.setValue(producto.descriptionL, forKey: "descriptionL")
-        newProductCar.setValue(producto.image, forKey: "image")
-        newProductCar.setValue(producto.title, forKey: "title")
+        let cart = NSManagedObject(entity: entity!, insertInto: context)
+        cart.setValue(producto.id, forKey: "id")
+        cart.setValue(amount, forKey: "amount")
+        cart.setValue(Double(producto.price) * Double(amount), forKey: "price")
+        cart.setValue(producto.descriptionL, forKey: "descriptionL")
+        cart.setValue(producto.image, forKey: "image")
+        cart.setValue(producto.title, forKey: "title")
         do {
             try context.save()
-            //counter.value = 1
-            //Cantidad.text = "1"
         } catch {
-            print("Error saving")
+            print("Error")
         }
     }
 
@@ -100,13 +79,12 @@ class Db_crud: Db_crudProtocol {
                 let description = data.value(forKey: "descriptionL") as! String
                 let imagen = data.value(forKey: "image") as! String
                 let price = data.value(forKey: "price")  as! Double
-                //PriceT += price // usar viper
                 let product = ShopCartEntityS(id: id, title: title, price: price, description: description, image: imagen, amount: amount)
                 products.append(product)
             }
             return products
         } catch {
-            print("Failed")
+            print("Error")
         }
         return []
     }

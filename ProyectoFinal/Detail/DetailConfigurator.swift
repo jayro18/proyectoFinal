@@ -19,9 +19,9 @@ class DetailConfigurator {
         
         let storyboard = UIStoryboard(name: "Products", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
         let api = Db_crud()
         interactor.api = api
-        
         presenter.view = view
          presenter.interactor = interactor
          presenter.router = router

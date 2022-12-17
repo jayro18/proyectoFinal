@@ -18,16 +18,11 @@ protocol ProductoInteractorProtocol {
 }
 
 protocol ProductoRouterProtocol {
-    func presentDescriptionView(_ product: ProductsResponse)
+    func viewDescription(_ product: ProductsResponse)
 }
 
 /// Lista de metodos/propiedad que son usados por el `View`
 protocol ProductoPresenterInputProtocol {
-    
-    
-    // Cosas que el view -> presenter
-//    func getData()
-//    func presentErrorView()
     
     func showProductoSelected(_ producto: ProductsResponse)
 }
@@ -35,10 +30,8 @@ protocol ProductoPresenterInputProtocol {
 /// Lista de métodos/propiedades que son usados por los clientes del `presenter`
 protocol ProductoPresenterOutputProtocol {
     // Cosas que el router -> presenter
-    func viewDetailProduct(_ index: Int)
+    func viewDetail(_ index: Int)
     func allData()
-    func getNumberofItem() -> Int
-    func printProductData(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> UICollectionViewCell
-    
-//    func mostrarProducto(_ producto: [ProductEntity])
+    func items() -> Int
+    func cellProduct(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> UICollectionViewCell
 }

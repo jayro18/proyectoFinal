@@ -25,20 +25,12 @@
                                     <constraint firstAttribute="height" constant="91" id="TaV-eC-3qi"/>
                                 </constraints>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nbT-wz-Okj">
-                                <rect key="frame" x="20" y="149" width="353" height="32"/>
-                                <segments>
-                                    <segment title="Comida"/>
-                                    <segment title="Accesorios"/>
-                                    <segment title="Aseo"/>
-                                </segments>
-                                <connections>
-                                    <action selector="categorySegmentedControl:" destination="XlM-v5-h8h" eventType="valueChanged" id="EWv-jt-5UV"/>
-                                </connections>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rh5-LP-buQ">
-                                <rect key="frame" x="20" y="200" width="353" height="618"/>
+                                <rect key="frame" x="16" y="149" width="357" height="669"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="669" id="vR2-gz-SRT"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fIN-hw-u5b">
                                     <size key="itemSize" width="180" height="230"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,7 +39,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tienda" id="ixc-Y6-R56" customClass="ProductsCollectionViewCell" customModule="ProyectoFinal" customModuleProvider="target">
-                                        <rect key="frame" x="86.666666666666671" y="0.0" width="180" height="230"/>
+                                        <rect key="frame" x="88.666666666666671" y="0.0" width="180" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2c1-Jk-leO">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="230"/>
@@ -115,15 +107,11 @@
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Vlr-B0-Lo1" firstAttribute="bottom" secondItem="Rh5-LP-buQ" secondAttribute="bottom" id="4L3-yx-2Qo"/>
-                            <constraint firstItem="Vlr-B0-Lo1" firstAttribute="trailing" secondItem="nbT-wz-Okj" secondAttribute="trailing" constant="20" id="ACj-hE-Lsu"/>
                             <constraint firstItem="Vlr-B0-Lo1" firstAttribute="trailing" secondItem="Rh5-LP-buQ" secondAttribute="trailing" constant="20" id="FxE-ld-8iz"/>
                             <constraint firstItem="Vlr-B0-Lo1" firstAttribute="trailing" secondItem="dVG-MV-CY7" secondAttribute="trailing" constant="122" id="G1o-Wj-cBf"/>
                             <constraint firstItem="dVG-MV-CY7" firstAttribute="leading" secondItem="Vlr-B0-Lo1" secondAttribute="leading" constant="122" id="Ss5-DQ-ae3"/>
                             <constraint firstItem="Vlr-B0-Lo1" firstAttribute="top" secondItem="dVG-MV-CY7" secondAttribute="top" constant="9" id="XyV-3K-JKh"/>
-                            <constraint firstItem="nbT-wz-Okj" firstAttribute="leading" secondItem="Vlr-B0-Lo1" secondAttribute="leading" constant="20" id="cCA-g7-SqY"/>
-                            <constraint firstItem="Rh5-LP-buQ" firstAttribute="leading" secondItem="Vlr-B0-Lo1" secondAttribute="leading" constant="20" id="ewY-zV-W1a"/>
-                            <constraint firstItem="nbT-wz-Okj" firstAttribute="top" secondItem="dVG-MV-CY7" secondAttribute="bottom" constant="8" symbolic="YES" id="weU-tp-Ax8"/>
-                            <constraint firstItem="Rh5-LP-buQ" firstAttribute="top" secondItem="nbT-wz-Okj" secondAttribute="bottom" constant="20" id="xSk-t3-c1k"/>
+                            <constraint firstItem="Rh5-LP-buQ" firstAttribute="leading" secondItem="Vlr-B0-Lo1" secondAttribute="leading" constant="16" id="ewY-zV-W1a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y4q-xc-YVW"/>

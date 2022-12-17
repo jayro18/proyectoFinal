@@ -110,9 +110,9 @@
             filePath = "ProyectoFinal/Db_crud.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "saveProductCar(producto:amount:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "setShopCart(producto:amount:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -126,9 +126,9 @@
             filePath = "ProyectoFinal/ShopCart/Interactor/ShopCartInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "getProductsCar()"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getShopCart()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,9 +142,9 @@
             filePath = "ProyectoFinal/Db_crud.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "saveProductCar(producto:amount:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "setShopCart(producto:amount:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,41 +158,9 @@
             filePath = "ProyectoFinal/ShopCart/Presenter/ShopCartPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "getProducts()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "345F9C34-032F-4BB6-9937-1EE3422EE05D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProyectoFinal/ShopCart/Interactor/ShopCartInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "deleteProductCar(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CFA7E240-75AC-4791-B9C8-58E4C8BE2F58"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProyectoFinal/ShopCart/Presenter/ShopCartPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "deleteProductCar(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getAllShopCart()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

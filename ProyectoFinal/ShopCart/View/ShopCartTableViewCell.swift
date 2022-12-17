@@ -19,8 +19,7 @@ class ShopCartTableViewCell: UITableViewCell {
     @IBOutlet weak var priceShopCartLabel: UILabel!
     
     @IBAction func deleteShopCart(_ sender: UIButton) {
-        print(idPedido ?? 0)
-        presenter?.deleteProductCar(idPedido ?? 0)
+        
 
     }
     
@@ -41,7 +40,6 @@ class ShopCartTableViewCell: UITableViewCell {
         }
         priceShopCartLabel.text = String(product.price)
         titleShopCartLabel.text = product.title
-//            count.text = "x" + String(product.amount)
     }
     
     

@@ -17,12 +17,9 @@ class ProductConfigurator{
         let api = ProductsMocksAPI()
         
         let interactor = ProductoInteractor(presenter: presenter, api: api)
-       
-//        let view = ListaViewController()
         
         let storyboard = UIStoryboard(name: "Products", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "PrincipalViewController") as! PrincipalViewController
-        
         
         
         let router = ProductoRouter(presenter: presenter)

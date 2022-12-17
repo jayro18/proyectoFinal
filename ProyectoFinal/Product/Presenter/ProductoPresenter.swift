@@ -8,46 +8,25 @@
 
 import Foundation
 
-//protocol ListaPresenterProtocol {
-//
-////    // Cosas que el view -> presenter
-////    func getData()
-////    func presentErrorView()
-////
-////    // Cosas que el router -> presenter
-////    func opcionSeleccionada(_ index: Int)
-////    func mostrarPet(_ pet: [PetEntity])
-//
-//}
-
 import UIKit
 class ProductoPresenter {
     
     var view: ProductoViewProtocol?
     var router: ProductoRouterProtocol?
     var interactor: ProductoInteractorProtocol?
-
-    //    var productsList:[ProductEntity] = [ProductEntity]()
     var productsList:[ProductsResponse] = []
     
 }
 
 extension ProductoPresenter: ProductoPresenterOutputProtocol {
+    
 
-    func allData() {
-        productsList = interactor?.productsAPI() ?? []
-    }
-    
-    func getNumberofItem() -> Int{
-        return productsList.count
-    }
-    
-    func viewDetailProduct(_ index: Int) {
+    func viewDetail(_ index: Int) {
         let product = productsList[index]
-        router?.presentDescriptionView(product)
+        router?.viewDescription(product)
     }
     
-    func printProductData(_ collectionView: UICollectionView, _ indexPath: IndexPath ) -> UICollectionViewCell {
+    func cellProduct(_ collectionView: UICollectionView, _ indexPath: IndexPath ) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tienda", for: indexPath)
             as? ProductsCollectionViewCell {
             
@@ -71,11 +50,20 @@ extension ProductoPresenter: ProductoPresenterOutputProtocol {
             return UICollectionViewCell()
         }
     }
+    
+    func allData() {
+        productsList = interactor?.productsAPI() ?? []
+    }
+    
+    func items() -> Int{
+        return productsList.count
+    }
+    
 }
 
 extension ProductoPresenter: ProductoPresenterInputProtocol {
     func showProductoSelected(_ producto: ProductsResponse) {
-        router?.presentDescriptionView(producto)
+        router?.viewDescription(producto)
     }
 
 }
