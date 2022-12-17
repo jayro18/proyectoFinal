@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dIh-kk-NYX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bGQ-Oc-SEe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -10,16 +10,18 @@
     </dependencies>
     <scenes>
         <!--Home View Controller-->
-        <scene sceneID="d0k-MA-SsI">
+        <scene sceneID="Ilw-Sy-kfc">
             <objects>
-                <viewController id="hvF-gF-9T7" customClass="HomeViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2OQ-Rd-caU">
+                <viewController id="iij-bm-cjb" customClass="HomeViewController" customModule="ProyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7oN-bc-8r5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eX-Pm-jxT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kN4-Bc-XMl">
                                 <rect key="frame" x="115" y="472" width="163" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="XQ9-sS-RCC"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" imagePlacement="trailing" title="Ingresar " cornerStyle="large">
                                     <imageReference key="image" image="arrowshape.forward" catalog="system" symbolScale="default" variableValue="1"/>
@@ -27,54 +29,60 @@
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="NpE-qv-R0q" kind="show" id="nCu-Pf-JHH"/>
+                                    <action selector="nextView:" destination="iij-bm-cjb" eventType="touchUpInside" id="QPg-y6-nd8"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoPetishop" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Ji-EUr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoPetishop" translatesAutoresizingMaskIntoConstraints="NO" id="Zni-ye-nML">
                                 <rect key="frame" x="69" y="155" width="254" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bienvenidos a la App de PetiShop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-HM-Mt4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bienvenidos a la App de PetiShop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUQ-fb-6B1">
                                 <rect key="frame" x="26" y="371" width="341" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="M3m-vf-wA5"/>
+                        <viewLayoutGuide key="safeArea" id="5fb-oj-oEb"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="kN4-Bc-XMl" firstAttribute="centerX" secondItem="7oN-bc-8r5" secondAttribute="centerX" id="DIM-EC-ajo"/>
+                            <constraint firstItem="5fb-oj-oEb" firstAttribute="bottom" secondItem="kN4-Bc-XMl" secondAttribute="bottom" constant="305" id="HJe-lB-Mbl"/>
+                            <constraint firstItem="kN4-Bc-XMl" firstAttribute="leading" secondItem="5fb-oj-oEb" secondAttribute="leading" constant="115" id="PtB-15-MeQ"/>
+                            <constraint firstItem="kN4-Bc-XMl" firstAttribute="top" secondItem="kUQ-fb-6B1" secondAttribute="bottom" constant="73" id="sY3-Xy-5Pp"/>
+                            <constraint firstItem="kN4-Bc-XMl" firstAttribute="centerX" secondItem="kUQ-fb-6B1" secondAttribute="centerX" id="zW0-g9-g1b"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KSo-5Z-0vP"/>
+                    <navigationItem key="navigationItem" id="bKD-2x-XB5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OM1-3E-LG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="on5-Lh-Xnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-577.86259541984725" y="-97.183098591549296"/>
         </scene>
-        <!--Products-->
-        <scene sceneID="YD1-Qs-NP1">
+        <!--PrincipalViewController-->
+        <scene sceneID="WZX-hG-MM3">
             <objects>
-                <viewControllerPlaceholder storyboardName="Products" id="NpE-qv-R0q" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Reb-2J-yNF"/>
+                <viewControllerPlaceholder storyboardName="Products" referencedIdentifier="PrincipalViewController" id="GDv-GD-Oe5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Oo6-OO-OZc"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PFd-xG-Bbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ga-Pc-Psy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-578" y="301"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qTm-p7-1I8">
+        <scene sceneID="sNl-BS-M2S">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dIh-kk-NYX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="bGQ-Oc-SEe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tCs-0T-ZBk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EwN-sK-5RC">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hvF-gF-9T7" kind="relationship" relationship="rootViewController" id="TId-am-YYD"/>
+                        <segue destination="iij-bm-cjb" kind="relationship" relationship="rootViewController" id="sjk-8k-ldx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQ3-kM-Jla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YzV-gL-ztH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1504.5801526717557" y="-97.183098591549296"/>
         </scene>
