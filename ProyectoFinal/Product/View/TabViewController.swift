@@ -1,18 +1,22 @@
 //
-//  CartViewController.swift
+//  TabViewController.swift
 //  ProyectoFinal
 //
-//  Created by Jayro Adilson Alhuay Galindo on 29/11/22.
+//  Created by Jayro Adilson Alhuay Galindo on 13/12/22.
 //
 
 import UIKit
 
-class CartViewController: UIViewController {
+class TabViewController: UITabBarController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let  productViewController = ProductConfigurator.makeProducto()
         // Do any additional setup after loading the view.
+        viewControllers = [productViewController]
     }
     
 

@@ -7,12 +7,13 @@
 
 import UIKit
 
-struct Products : Decodable{
-    let id: Int
+struct Product : Decodable{
+        let id: Int
         let title: String
-       let price: Double
-       let image: String
+        let price: Double
+        let image: String
         let description: String
+        let categoria: String
 }
 
 //func recogerData(){

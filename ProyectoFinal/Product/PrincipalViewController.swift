@@ -9,41 +9,58 @@ import UIKit
 
 class PrincipalViewController: UIViewController {
     
-    var productsList:[Products] = [Products]()
+    
+    var productsList:[Product] = [Product]()
 
+
+    // Agregar una variable lazy para que este filtro funcione cuando ya este lleno el productsList
+   lazy var foodCategory = productsList.filter{$0.categoria == "comida"}
+   lazy var accessoryCategory = productsList.filter{$0.categoria == "accesorio"}
+    lazy var aseoCategory = productsList.filter{$0.categoria == "aseo"}
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-              
-        
-        collectionView.dataSource = self
-        collectionView.delegate=self
-        collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
-        fetchData()
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+ 
+//    Categoria
+    @IBAction func categorySegmentedControl(_ sender: UISegmentedControl) {
+        collectionView.reloadData()
+       
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchData()
+        collectionView.dataSource = self
+        collectionView.delegate=self
+        collectionView.collectionViewLayout = UICollectionViewFlowLayout()
+ 
+      
     }
-    */
+    
 
 }
 
 extension PrincipalViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productsList.count
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            return foodCategory.count
+        case 1:
+            return accessoryCategory.count
+        case 2:
+            return aseoCategory.count
+        default:
+            break
+        }
+        return 0
+//        return productsList.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tienda", for: indexPath) as! ProductsCollectionViewCell
 
             cell.layer.cornerRadius = 10
@@ -59,7 +76,22 @@ extension PrincipalViewController: UICollectionViewDataSource{
             cell.layer.shadowOpacity = 1.0
             cell.layer.masksToBounds = false
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-            cell.setup(with: productsList[indexPath.row])
+            
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+
+            cell.setup(with: foodCategory[indexPath.row])
+            return cell
+        case 1:
+            cell.setup(with: accessoryCategory[indexPath.row])
+            return cell
+        case 2:
+            cell.setup(with: aseoCategory[indexPath.row])
+            return cell
+        default:
+            break
+        }
+//           cell.setup(with: productsList[indexPath.row])
         
         return cell
     }
@@ -77,10 +109,34 @@ extension PrincipalViewController: UICollectionViewDataSource{
          //   guard let name = nameTF, !name.isEmpty else { return  }
             
             guard let id = sender as? NSIndexPath else {return}
-            let fila = productsList[id.row]
-            let destino = segue.destination as? DetailViewController
             
-            destino?.detailProducts = fila
+            switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                let fila = foodCategory[id.row]
+                let destino = segue.destination as? DetailViewController
+
+                destino?.detailProducts = fila
+
+            case 1:
+                let fila = accessoryCategory[id.row]
+                let destino = segue.destination as? DetailViewController
+
+                destino?.detailProducts = fila
+
+            case 2:
+                let fila = aseoCategory[id.row]
+                let destino = segue.destination as? DetailViewController
+
+                destino?.detailProducts = fila
+
+            default:
+                break
+            }
+            
+//            let fila = productsList[id.row]
+//            let destino = segue.destination as? DetailViewController
+//
+//            destino?.detailProducts = fila
             
         }
     }
@@ -95,7 +151,7 @@ extension PrincipalViewController: UICollectionViewDataSource{
     
         do {
            let data = try Data(contentsOf: fileLocation)
-            let receivedData = try JSONDecoder().decode([Products].self, from: data)
+            let receivedData = try JSONDecoder().decode([Product].self, from: data)
             
             self.productsList = receivedData
             
@@ -116,5 +172,3 @@ extension PrincipalViewController:UICollectionViewDelegateFlowLayout{
         return CGSize(width: 170, height: 200)
     }
 }
-
-

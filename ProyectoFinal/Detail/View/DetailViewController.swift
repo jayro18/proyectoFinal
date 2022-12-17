@@ -7,20 +7,33 @@
 
 import UIKit
 
+
+
 class DetailViewController: UIViewController {
+    // Contador
+    var count = 1
+    
+    var presenter: DetailPresenterProtocol?
+    
+ 
+//    var detailProducts : ProductEntity?
 
-    var detailProducts : Products?
-
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var precioLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imgImageView: UIImageView!
     
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
-    // Contador
-    
-    var count = 1
-    
+    @IBAction func addCartButton(_ sender: UIButton) {
+        
+        presenter?.addShopCart(Int(count))
+
+    }
+   
     @IBOutlet weak var countLabel: UILabel!
     @IBAction func downButton(_ sender: UIButton) {
         if(count <= 1) {return}
@@ -32,13 +45,15 @@ class DetailViewController: UIViewController {
         count = count + 1
         countLabel.text = "\(count)"
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let detalle = detailProducts else {return}
         
+        titleLabel.text =  presenter?.getDataProduct().title
+        precioLabel.text? =  "S/ \(String(format: "%.2f", (presenter?.getDataProduct().price)!))"
+        descriptionLabel.text = presenter?.getDataProduct().descriptionL
         DispatchQueue.global().async {
-            guard let url = NSURL(string: detalle.image) as? URL else {return}
+            guard let url = NSURL(string: self.presenter?.getDataProduct().image ?? "") as? URL else {return}
             guard let data = try? Data(contentsOf: url) else {return} //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             
             DispatchQueue.main.async {
@@ -46,13 +61,9 @@ class DetailViewController: UIViewController {
             }
         }
         
-        titleLabel.text = detalle.title
-       descriptionLabel.text = detalle.description
-        precioLabel.text =  "S/ \(String(format: "%.2f", detalle.price))"
+        
         
     }
-    
-    
     
 
 }
