@@ -17,13 +17,9 @@ class ProductoInteractor: ProductoInteractorProtocol {
         self.api = api
     }
     
-    func productsAPI() {
-        print("called: favoritos en interactor")
-        if let products = api?.fetchTrendingProducts() {
-
-            let productoEntity = ProductEntity.make(products)
-            presenter.mostrarProducto(productoEntity)
-        }
+    func productsAPI() -> [ProductsResponse] {
+       return api?.fetchTrendingProducts() ?? []
+           
     }
 }
 

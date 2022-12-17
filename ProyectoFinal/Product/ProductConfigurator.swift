@@ -30,7 +30,7 @@ class ProductConfigurator{
         
         presenter.router = router
         presenter.interactor = interactor
-        presenter.view = view
+        presenter.view = view as? any ProductoViewProtocol
         
 
         view.presenter = presenter

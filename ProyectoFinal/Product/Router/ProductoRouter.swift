@@ -9,36 +9,6 @@ import UIKit
 
 class ProductoRouter: ProductoRouterProtocol {
     
-    var detailConfigurator: DetailConfigurator?
-    
-
-    func presetProductoDetail(_ producto: ProductEntity) {
-
-        let petDetail = ProductoDetail(id: producto.id, title: producto.title, price: producto.price, image: producto.image, description: producto.description, categoria: producto.categoria)
-
-        detailConfigurator = DetailConfigurator()
-
-        /// Paso 3 (cliente)
-        detailConfigurator?.delegate = self
-        let detailViewController = detailConfigurator!.make(petDetail)
-        
-            let storyboard = UIStoryboard(name: "Products", bundle: nil)
-            let view = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-            view.navigationController?.pushViewController(detailViewController, animated: true)
-//        view?.present(detailViewController, animated: true)
-
-    }
-    
-    func mostrar(_ producto: ProductEntity) {
-  
-        let viewController = UIViewController()
-        
-//        let storyboard = UIStoryboard(name: "Products", bundle: nil)
-//        let view = storyboard.instantiateViewController(withIdentifier: "PrincipalViewController") as! PrincipalViewController
-//        navigationController?.pushViewController(viewController, animated: true)
-      view?.present(viewController, animated: true)
-    }
-    
     
     let presenter: ProductoPresenterOutputProtocol?
     var view: UIViewController?
@@ -47,26 +17,17 @@ class ProductoRouter: ProductoRouterProtocol {
         self.presenter = presenter
     }
     
-    func presentaAlerta() {
-        /// alerta presentada
-        ///
-        /// Usuario seleccionó opción 3
-        print("called: presetAlerta en router")
-        presenter?.opcionSeleccionada(3)
+    func presentDescriptionView(_ product: ProductsResponse){
+        let productDetail = DetailEntity(id: product.id, title: product.title, price: product.price, descriptionL: product.description, image: product.image, categoria: product.categoria, stock: product.stock)
 
+        let viewDescription = DetailConfigurator.make(productDetail)
         
-//        view?.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>)
-//        view?.show(<#T##vc: UIViewController##UIViewController#>, sender: <#T##Any?#>)
-//        view?.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+        view?.navigationController?.pushViewController(viewDescription, animated: true)
+        
+        
+//        view?.present(viewDescription, animated: true)
     }
+    
 }
 
-// Paso 1 (cliente)
-extension ProductoRouter: DetailConfiguratorDelegate {
 
-    /// Paso 2 (cliente)
-    func detailConfigurator(didDismiss viewController: UIViewController) {
-        print("soy notificado")
-    }
-
-}

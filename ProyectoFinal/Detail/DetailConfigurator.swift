@@ -8,36 +8,28 @@
 import Foundation
 import UIKit
 
-// Paso 1 (proveedor)
-public protocol DetailConfiguratorDelegate {
-    func detailConfigurator(didDismiss viewController: UIViewController)
-}
 
-public class DetailConfigurator {
+class DetailConfigurator {
     
-    /// Paso 2: Crear propiedad (proveedor)
-    public var delegate: DetailConfiguratorDelegate?
-    
-    func make(_ item: ItemDetailProtocol) -> UIViewController {
+    static func make(_ product: DetailEntityProtocol) -> UIViewController {
         
-        // Router
-        let router = DetailRouter(delegate: delegate!)
-
-        // Presenter
-        let presenter = DetailPresenter(itemDetail: item)
-        presenter.router = router
-        
-        // Interactor
-        
-        
-        // View
+        let presenter = DetailPresenter()
+        let interactor = DetailInteractor()
+        let router = DetailRouter(presenter: presenter)
         
         let storyboard = UIStoryboard(name: "Products", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let api = Db_crud()
+        interactor.api = api
         
-        view.presenter = presenter
+        presenter.view = view
+         presenter.interactor = interactor
+         presenter.router = router
+         presenter.producto = product
         
         router.view = view
+
+        view.presenter = presenter
         
         return view
         

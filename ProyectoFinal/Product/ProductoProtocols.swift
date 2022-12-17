@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProductoViewProtocol {
     func mostrar(_ numero: Int)
@@ -13,28 +14,31 @@ protocol ProductoViewProtocol {
 }
 
 protocol ProductoInteractorProtocol {
-    func productsAPI()
+    func productsAPI() -> [ProductsResponse]
 }
 
 protocol ProductoRouterProtocol {
-    func presentaAlerta()
-    func mostrar(_ producto: ProductEntity)
-    func presetProductoDetail(_ producto: ProductEntity)
+    func presentDescriptionView(_ product: ProductsResponse)
 }
 
 /// Lista de metodos/propiedad que son usados por el `View`
 protocol ProductoPresenterInputProtocol {
     
-    // Cosas que el view -> presenter
-    func getData()
-    func presentErrorView()
     
-    func showProductoSelected(_ producto: ProductEntity)
+    // Cosas que el view -> presenter
+//    func getData()
+//    func presentErrorView()
+    
+    func showProductoSelected(_ producto: ProductsResponse)
 }
 
 /// Lista de métodos/propiedades que son usados por los clientes del `presenter`
 protocol ProductoPresenterOutputProtocol {
     // Cosas que el router -> presenter
-    func opcionSeleccionada(_ index: Int)
-    func mostrarProducto(_ producto: [ProductEntity])
+    func viewDetailProduct(_ index: Int)
+    func allData()
+    func getNumberofItem() -> Int
+    func printProductData(_ collectionView: UICollectionView, _ indexPath: IndexPath) -> UICollectionViewCell
+    
+//    func mostrarProducto(_ producto: [ProductEntity])
 }

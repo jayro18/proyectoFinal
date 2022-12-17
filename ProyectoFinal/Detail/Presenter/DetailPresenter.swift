@@ -6,26 +6,34 @@
 //
 
 import Foundation
-class DetailPresenter: DetailPresenterProtocol {
-    
+import UIKit
+import CoreData
 
-    private let itemDetail: ItemDetailProtocol
-    
-    var router: DetailRouterProtocol?
-    
-//    var view: DetailViewProtocol?
-    
-    required init(itemDetail: ItemDetailProtocol) {
-        self.itemDetail = itemDetail
-    }
-    
-    func getDetailProduct() -> ItemDetailProtocol{
-        return itemDetail
-        
-//        view?.datoObtenidoDeFormaAsync("")
-    }
-    func dismiss() {
-        router?.dismiss()
-    }
-    
+protocol DetailPresenterProtocol {
+    func addShopCart(_ amount:Int)
+    func getDataProduct() -> DetailEntityProtocol
 }
+
+class DetailPresenter {
+    var view: UIViewController!
+    var router: DetailRouterProtocol?
+    var interactor: DetailInteractorProtocol?
+    var producto: DetailEntityProtocol?
+
+}
+
+
+extension DetailPresenter: DetailPresenterProtocol {
+    
+    
+    func getDataProduct() -> DetailEntityProtocol {
+        return producto!
+//        return producto ?? DetailEntity(id: 0, title: "", price: 0, descriptionL: "", image: "", categoria: "", stock: 0)
+    }
+    
+    func addShopCart(_ amount:Int) {
+        interactor?.setProductDatacore(producto!, amount)
+        router?.presentShopCartView()
+    }
+}
+    

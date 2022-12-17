@@ -8,7 +8,7 @@
 import Foundation
 
 
-class ProductoDetail: ItemDetailProtocol {
+class ProductoDetail {
     
     let id: Int
     let title: String

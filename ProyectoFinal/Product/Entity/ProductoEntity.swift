@@ -18,8 +18,4 @@ struct ProductEntity {
         let description: String
         let categoria: String
  
-    
-    static func make(_ productos: [ProductsResponse]) -> [ProductEntity] {
-        return productos.map({ ProductEntity(id: $0.id, title: $0.title, price:$0.price , image: $0.image, description: $0.description, categoria: $0.categoria ) })
-    }
 }

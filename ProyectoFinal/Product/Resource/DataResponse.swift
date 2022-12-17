@@ -14,5 +14,6 @@ struct ProductsResponse : Decodable{
         let image: String
         let description: String
         let categoria: String
+        let stock : Int
     
 }
